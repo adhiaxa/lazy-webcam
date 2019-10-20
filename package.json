@@ -8,9 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:prod": "ng build --prod --extra-webpack-config webpack.partial.js --base-href /lazy-webcam --deploy-url /lazy-webcam/",
-    "build:stage": "ng build --prod -c staging --extra-webpack-config webpack.partial.js --base-href /lazy-webcam --deploy-url /lazy-webcam/",
-    "build:dev": "ng build -c development --extra-webpack-config webpack.partial.js --base-href /lazy-webcam --deploy-url /lazy-webcam/"
+    "build:prod": "ng build --prod --extra-webpack-config webpack.partial.js --base-href /lazy-webcam/ --deploy-url /lazy-webcam/",
+    "build:stage": "ng build --prod -c staging --extra-webpack-config webpack.partial.js --base-href /lazy-webcam/ --deploy-url /lazy-webcam/",
+    "build:dev": "ng build -c development --extra-webpack-config webpack.partial.js --base-href /lazy-webcam/ --deploy-url /lazy-webcam/"
   },
   "private": true,
   "dependencies": {
