@@ -3,11 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve --extra-webpack-config webpack.partial.js --base-href /lazy-webcam/",
+    "build": "ng build --extra-webpack-config webpack.partial.js --base-href /lazy-webcam/",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:prod": "ng build --prod --extra-webpack-config webpack.partial.js --base-href /lazy-webcam",
+    "build:stage": "ng build --prod -c staging --extra-webpack-config webpack.partial.js --base-href /lazy-webcam ",
+    "build:dev": "ng build -c development --extra-webpack-config webpack.partial.js --base-href /lazy-webcam"
   },
   "private": true,
   "dependencies": {
@@ -19,8 +22,12 @@
     "@angular/platform-browser": "~8.2.9",
     "@angular/platform-browser-dynamic": "~8.2.9",
     "@angular/router": "~8.2.9",
+    "@types/video.js": "^7.2.15",
+    "ngx-build-plus": "^8.1.5",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
+    "videojs-record": "^3.8.0",
+    "videojs-watermark": "^2.0.0",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
@@ -28,10 +35,11 @@
     "@angular/cli": "~8.3.9",
     "@angular/compiler-cli": "~8.2.9",
     "@angular/language-service": "~8.2.9",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
+    "html-webpack-plugin": "^3.2.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
