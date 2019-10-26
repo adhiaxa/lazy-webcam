@@ -24,8 +24,8 @@ video {
 }
 
 .vertical-center {
-  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-  min-height: 100vh; /* These two lines are counted as one :-)       */
+  /*min-height: 100%;  !* Fallback for browsers do NOT support vh unit *!*/
+  /*min-height: 100vh; !* These two lines are counted as one :-)       *!*/
   display: flex;
   align-items: center;
 }
@@ -58,9 +58,14 @@ video {
   opacity: 1;
 }
 
-
-
-.vjs-tech { object-fit: cover; }
+.vjs-tech {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  object-fit: cover;
+}
 
 /*.videoContainer {*/
 /*  position: relative;*/
