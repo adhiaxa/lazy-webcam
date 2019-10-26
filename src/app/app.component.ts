@@ -7,7 +7,10 @@ import {
 
 import videojs from 'video.js';
 
+
 import * as Record from 'videojs-record/dist/videojs.record.js';
+import * as moment from 'moment';
+
 
 
 @Component({
@@ -16,6 +19,7 @@ import * as Record from 'videojs-record/dist/videojs.record.js';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
+
 
   // reference to the element itself: used to access events and methods
   private _elementRef: ElementRef;
@@ -39,12 +43,13 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
       controls: true,
       autoplay: true,
       aspectRatio: '16:9',
-      fluid: false,
+      // fluid: true,
       loop: false,
-      width: 320,
-      height: 240,
+      // width: 1280,
+      // height: 720,
       controlBar: {
-        volumePanel: false
+        volumePanel: false,
+        fullscreenToggle: false
       },
       fullscreen: {options: {navigationUI: 'hide'}},
       plugins: {
@@ -82,7 +87,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
     this.player.on('deviceReady', () => {
       console.log('device is ready!');
 
-      setTimeout(() => { this.player.record().start()}, 400);
+      // setTimeout(() => { this.player.record().start()}, 400);
     });
 
     // user clicked the record button and started recording
@@ -95,7 +100,9 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
       // recordedData is a blob object containing the recorded data that
       // can be downloaded by the user, stored on server etc.
       console.log('finished recording: ', this.player.recordedData);
-      this.player.record().saveAs({video: `video-${Date.now()}.webm` });
+      const fileName = moment().format('YYYY-MM-DD-HH:mm:s');
+
+      this.player.record().saveAs({video: `video-${fileName}.mp4` });
       this.player.record().reset();
     });
 

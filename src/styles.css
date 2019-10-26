@@ -1,10 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/video.js/dist/video-js.css";
 @import "../node_modules/videojs-record/dist/css/videojs.record.css";
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
-video
-{
+/*video*/
+/*{*/
+/*  transform: rotateY(180deg);*/
+/*  -webkit-transform:rotateY(180deg); !* Safari and Chrome *!*/
+/*  -moz-transform:rotateY(180deg); !* Firefox *!*/
+/*}*/
+
+video {
+  /*object-fit: cover;*/
   transform: rotateY(180deg);
-  -webkit-transform:rotateY(180deg); /* Safari and Chrome */
-  -moz-transform:rotateY(180deg); /* Firefox */
+  -webkit-transform:rotateY(180deg);
+  -moz-transform:rotateY(180deg);
 }
+
+#video_zan1 {
+  /*width: 1207px;*/
+  background: url("./assets/frame.png") no-repeat center bottom;
+  background-size: contain;
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+  display: flex;
+  align-items: center;
+}
+
+.vjs-container {
+  /*height: 835px;*/
+}
+
+.container {
+  background: url("./assets/frame.png") no-repeat center bottom;
+  background-size: cover;
+}
+
+.vjs-tech { object-fit: cover; }
