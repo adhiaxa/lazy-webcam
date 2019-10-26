@@ -7,7 +7,6 @@ import {
 
 import videojs from 'video.js';
 
-
 import * as Record from 'videojs-record/dist/videojs.record.js';
 import * as moment from 'moment';
 
@@ -56,8 +55,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
           audio: false,
           video: true,
           debug: false,
-          maxLength: 30,
-          videoMimeType: 'video/mp4'
+          maxLength: 30
         }
       }
     };
