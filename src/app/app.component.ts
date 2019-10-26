@@ -56,7 +56,8 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
           audio: false,
           video: true,
           debug: false,
-          maxLength: 30
+          maxLength: 30,
+          videoMimeType: 'video/mp4'
         }
       }
     };

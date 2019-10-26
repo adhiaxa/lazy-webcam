@@ -19,8 +19,8 @@ video {
 
 #video_zan1 {
   /*width: 1207px;*/
-  background: url("./assets/frame.png") no-repeat center bottom;
-  background-size: contain;
+  /*background: url("./assets/frame.png") no-repeat center bottom;*/
+  /*background-size: contain;*/
 }
 
 .vertical-center {
@@ -42,6 +42,8 @@ video {
   border-radius: 5px;
   background-attachment: scroll;
   overflow: hidden;
+  padding-right: 0;
+  padding-left: 0;
 }
 
 .container-fluid .overlay {
