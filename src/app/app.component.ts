@@ -45,8 +45,6 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
       aspectRatio: '16:9',
       // fluid: true,
       loop: false,
-      // width: 1280,
-      // height: 720,
       controlBar: {
         volumePanel: false,
         fullscreenToggle: false
@@ -87,7 +85,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
     this.player.on('deviceReady', () => {
       console.log('device is ready!');
 
-      // setTimeout(() => { this.player.record().start()}, 400);
+      setTimeout(() => { this.player.record().start()}, 400);
     });
 
     // user clicked the record button and started recording
