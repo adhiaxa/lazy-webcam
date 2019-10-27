@@ -67,6 +67,10 @@ video {
   object-fit: cover;
 }
 
+body {
+  background-color: #000000;
+}
+
 /*.videoContainer {*/
 /*  position: relative;*/
 /*  width: 100%;*/
