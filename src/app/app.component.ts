@@ -53,9 +53,23 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
         // configure videojs-record plugin
         record: {
           audio: false,
-          video: true,
+          // video: true,
           debug: false,
-          maxLength: 30
+          maxLength: 30,
+          // screen: true,
+          // video: {
+          //   // video constraints: set resolution of camera
+          //   mandatory: {
+          //     minWidth: 1280,
+          //     minHeight: 800,
+          //   },
+          // },
+          video: {
+            width: {ideal: 640 },
+            height: {ideal: 360 }
+          },
+          frameWidth: 640,
+          frameHeight: 360
         }
       }
     };
