@@ -52,7 +52,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
       plugins: {
         // configure videojs-record plugin
         record: {
-          audio: false,
+          audio: true,
           // video: true,
           debug: false,
           maxLength: 30,
@@ -65,6 +65,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
           //   },
           // },
           video: {
+
             width: {ideal: 640 },
             height: {ideal: 360 }
           },
