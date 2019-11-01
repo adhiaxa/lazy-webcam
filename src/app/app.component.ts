@@ -55,7 +55,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
           audio: true,
           // video: true,
           debug: false,
-          maxLength: 30,
+          maxLength: 40,
           // screen: true,
           // video: {
           //   // video constraints: set resolution of camera
