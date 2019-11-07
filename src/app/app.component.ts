@@ -10,16 +10,12 @@ import videojs from 'video.js';
 import * as Record from 'videojs-record/dist/videojs.record.js';
 import * as moment from 'moment';
 
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
-
-
   // reference to the element itself: used to access events and methods
   private _elementRef: ElementRef;
 
@@ -53,21 +49,11 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
         // configure videojs-record plugin
         record: {
           audio: true,
-          // video: true,
           debug: false,
           maxLength: 40,
-          // screen: true,
-          // video: {
-          //   // video constraints: set resolution of camera
-          //   mandatory: {
-          //     minWidth: 1280,
-          //     minHeight: 800,
-          //   },
-          // },
           video: {
-
-            width: {ideal: 640 },
-            height: {ideal: 360 }
+            width: {ideal: 640},
+            height: {ideal: 360}
           },
           frameWidth: 640,
           frameHeight: 360
@@ -76,10 +62,9 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
     };
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
-  // use ngAfterViewInit to make sure we initialize the videojs element
-  // after the component template itself has been rendered
   ngAfterViewInit() {
     // ID with which to access the template's video element
     let el = 'video_' + this.idx;
@@ -87,19 +72,15 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
     // setup the player via the unique element ID
     this.player = videojs(document.getElementById(el), this.config, () => {
       console.log('player ready! id:', el);
-
-      // print version information at startup
-      // var msg = 'Using video.js ' + videojs.VERSION +
-      //     ' with videojs-record ' + videojs.getPluginVersion('record') +
-      //     ' and recordrtc ' + RecordRTC.version;
-      // videojs.log(msg);
     });
 
     // device is ready
     this.player.on('deviceReady', () => {
       console.log('device is ready!');
 
-      setTimeout(() => { this.player.record().start()}, 400);
+      setTimeout(() => {
+        this.player.record().start();
+      }, 400);
     });
 
     // user clicked the record button and started recording
@@ -109,12 +90,10 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 
     // user completed recording and stream is available
     this.player.on('finishRecord', () => {
-      // recordedData is a blob object containing the recorded data that
-      // can be downloaded by the user, stored on server etc.
       console.log('finished recording: ', this.player.recordedData);
       const fileName = moment().format('YYYY-MM-DD-HH:mm:s');
 
-      this.player.record().saveAs({video: `video-${fileName}.mp4` });
+      this.player.record().saveAs({video: `video-${fileName}.mp4`});
       this.player.record().reset();
     });
 
@@ -127,15 +106,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
       console.error('device error:', this.player.deviceErrorCode);
     });
 
-    this.player.on('ready', () =>
-    {
-      // console.log('dipanggilkan **************');
-
-      // this.player.record().getDevice()
-      // var device = document.getElementsByClassName('vjs-device-button')[0] as HTMLElement;
-      //
-      // device.click();
-      // console.log(document.getElementsByClassName('vjs-device-button'));
+    this.player.on('ready', () => {
     });
 
   }
